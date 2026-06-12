@@ -20,8 +20,13 @@ Random Question choice:
 The program randomly selects six questions from each section. This makes sure that the questions don’t repeat and that each test is different
 
 Part A Test:
-The program shows the 6 Cyber Threat Questions. 
+The program shows the 6 Cyber Threat Questions. Then the user's answers get compared with the correct ones in the partAAnswers and the partBAnswers for either part, and the score gets updated for each question that is correct.
 
+Part B Test: Exact same logic as Part A
+
+Early Test stop: Before we display the next question, we have to check if the user can still even pass. If not, then we stop the test.
+
+Results: Adds up the scores of both parts if the test has not stopped, then presents the marks in percentage for the total, and Part A and Part B alone. 
 
 
 =========================================================================================================================================================
