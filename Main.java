@@ -203,6 +203,7 @@ public class Main {
                     for (int i = 0; i < countPartA; i++) {
 
                         if (pickedA[i] == randomQ) {
+                            //If the question was picked already, then alreadyPicked boolean = true 
                             alreadyPicked = true;
                         }
                     }
@@ -234,7 +235,6 @@ public class Main {
                 }
                 // Create variables for the scores of the people
 
-
                 int partAScore = 0;
                 int partBScore = 0;
                 boolean stopTest = false;
@@ -243,39 +243,48 @@ public class Main {
                 // Part A
                 System.out.println("Part A: Cyber Threats");
                 int counter = 0;
-                // stops user form continuing if they don't have enough marks to pass
+               //loops through exactly 6 random questions.
                 while (counter < 6 && stopTest == false) { 
+                    // THis calculates how many questions are remaining for 1 part of the test
                     int questionsLeft = 6 - counter;
+                    // THis checks if the test is still passable
                     if (partAScore + questionsLeft < 4) {
                         System.out.println("Can't get 4/6 for this section. The test is done");
+                        // If yes, then the test stops
                         stopTest = true;
                     } else {
+                        // This finds the index of the random question
                         int questionIndex = pickedA[counter];
+                             // prints the questions
                         System.out.println(partAQuestions.get(questionIndex));
+                        // User's answers is stored in this variable
                         String userAnswer = "";
-                        // prints the questions
+                   // We have to keep printing this until a valid answer gets inputted into our program
                         while (!userAnswer.equals("A") && !userAnswer.equals("B") && !userAnswer.equals("C") && !userAnswer.equals("D")) {
                             System.out.println("Select A, B, C, or D");
                             userAnswer = sc.nextLine().toUpperCase();
                         }
 
-
+                // If no valid answer, we have to keep telling the user to only choose a, b, c, or d.
                         if (!userAnswer.equals("A") && !userAnswer.equals("B") && !userAnswer.equals("C") && !userAnswer.equals("D")) {
                             System.out.println("Enter only A,B,C, or D.");
                         }
+                        // Compare's the user's response to the right one
                         if (userAnswer.equals(partAAnswers.get(questionIndex))) {
                             System.out.println("Correct");
+                            //If correct, add 1 mark to the score, if not add nothing
                             partAScore++;
                         } else {
                             System.out.println("Incorrect");
                         }
+                        // After all of that, move to the next question
                         counter++;
                     }
                 }
 
 
                 // Part B
-
+            // SAME LOGIC AS PART A
 
                 System.out.println("Part B: Online Safety");
                 int g = 0;
