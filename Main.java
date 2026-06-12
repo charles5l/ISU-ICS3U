@@ -243,7 +243,8 @@ public class Main {
                 // Part A
                 System.out.println("Part A: Cyber Threats");
                 int counter = 0;
-                while (counter < 6 && stopTest == false) {
+                // stops user form continuing if they don't have enough marks to pass
+                while (counter < 6 && stopTest == false) { 
                     int questionsLeft = 6 - counter;
                     if (partAScore + questionsLeft < 4) {
                         System.out.println("Can't get 4/6 for this section. The test is done");
@@ -252,6 +253,7 @@ public class Main {
                         int questionIndex = pickedA[counter];
                         System.out.println(partAQuestions.get(questionIndex));
                         String userAnswer = "";
+                        // prints the questions
                         while (!userAnswer.equals("A") && !userAnswer.equals("B") && !userAnswer.equals("C") && !userAnswer.equals("D")) {
                             System.out.println("Select A, B, C, or D");
                             userAnswer = sc.nextLine().toUpperCase();
