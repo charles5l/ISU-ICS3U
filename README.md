@@ -41,12 +41,15 @@ int removeIndex: Stores the index number of the question that the admin wants to
 
 
 Logic used:
+
 Admin password
 The admin panel starts with asking the user for the password and compares it with the stored password. If it’s correct, the admin menu is printed and if it’s incorrect, access is denied
+
 Admin menu
 After putting in the correct password two options are displayed, adding and removing a question. The admin’s choice is stored in the adminChoice variable to then be used in if statements to display the adding or removing menu
+
 Adding questions
 The admin can add a new question to either part A or B and if statements control where the question is stored through user input. The program asks the user to enter the question, 4 answer choices, and the correct one. The question is combined into one string using fullQuestion so that we don’t need a more arraylists to store the options. The answer and question are stored at the same index.
+
 Removing questions
 The program prints the available questions with their index numbers through a for loop, and then the admin can choose which question to remove. The program will then remove both the answer and question so that the answer key doesn’t get mismatched.
-Incorrec
