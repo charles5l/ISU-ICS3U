@@ -1,3 +1,7 @@
+// Cybersecurity Awareness Certification
+// NAMES: CHARLES AND STEFAN
+
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -325,12 +329,10 @@ public class Main {
             if (userChoice.equals("2"))  {
                 System.out.println("Enter admin password:");
                 String adminInput = sc.nextLine();
-                String adminPassword = "Triple T";
+                String adminPassword = "Triple T"; // built in password
 
-
+                // If password is correct
                 if (adminInput.equals(adminPassword)) {
-
-                    // If password is correct
 
                     //user friendly menu
                     System.out.println("\n\n\n\n=========================================");
@@ -361,6 +363,8 @@ public class Main {
                         String optionD = sc.nextLine();
                         System.out.println("Enter correct answer (A/B/C/D):");
                         String answer = sc.nextLine().toUpperCase();
+                        // each one is put into a variable so that we can combine them into one big variable 
+                        // because if the user wants to add a line break by pressing enter, the code will skip the options
 
                         // adds all the options into one variable so that we dont need more arraylists (keeps it compact)
                         String fullQuestion = question +
@@ -399,14 +403,15 @@ public class Main {
 
                         //Removing from Part A
                         if (aOrB.equals("A")) {
+                            
                             // loop prints out all the questions with a number so it's easy to read and choose
-
                             for (int i = 0; i < partAQuestions.size(); i++) {
                                 System.out.println((i + 1) + ". " + partAQuestions.get(i));
                             }
 
                             System.out.println("Enter question number to remove:");
                             int removeIndex = sc.nextInt() - 1; // to cancel out the +1
+                            
                             //make sure the input makes sense and will work
                             if (removeIndex >= 0 && removeIndex < partAQuestions.size()) {
                                 partAQuestions.remove(removeIndex);
@@ -414,31 +419,34 @@ public class Main {
                                 System.out.println("Question removed.");
                             }
                             else {
-                                System.out.println("Invalid question number.");
+                                System.out.println("Invalid question number."); // if the index doesn't exist or invalid
                             }
 
                         }
 
                         // Removing from part B
                         else if (aOrB.equals("B")) {
+                            // loop prints out all the questions with a number so it's easy to read and choose
                             for (int i = 0; i < partBQuestions.size(); i++) {
                                 System.out.println((i + 1) + ". " + partBQuestions.get(i));
                             }
-                            // loop prints out all the questions with a number so it's easy to read and choose
+                            
                             System.out.println("Enter question number to remove (include the questions):");
                             int removeIndex = sc.nextInt() - 1;
+                            
+                            // if statement to make sure it's a valid input
                             if (removeIndex >= 0 && removeIndex < partBQuestions.size()) {
                                 partBQuestions.remove(removeIndex);
                                 partBAnswers.remove(removeIndex);
                                 System.out.println("Question removed.");
                             }
                             else {
-                                System.out.println("Invalid question number.");
+                                System.out.println("Invalid question number."); // if the input is invalid
                             }
                         }
 
                         else {
-                            System.out.println("Invalid input.");
+                            System.out.println("Invalid input."); // if the remove question input isn't a or b
                         }
                     }
 
